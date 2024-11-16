@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #ff9a9e, #fecfef);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  .heart {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: pulse 1s infinite;
+  }
+  
+  .heart:before,
+  .heart:after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .heart:before {
+    top: -50px;
+    left: 0;
+  }
+  
+  .heart:after {
+    left: 50px;
+    top: 0;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(-45deg);
+    }
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6b6b;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff3b3b;
+  }
+  
+  .floating-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(-45deg);
+    animation: float 3s linear infinite;
+  }
+  
+  .floating-heart:before,
+  .floating-heart:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .floating-heart:before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .floating-heart:after {
+    left: 10px;
+    top: 0;
+  }
+  
+  @keyframes float {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(-45deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-200px) scale(1.5) rotate(-45deg);
+    }
+  }
